@@ -1,0 +1,11 @@
+<div class="dog">
+    <button class="generate-button" (click)="generateDog()">GENERATE DOG</button>
+    <div class="random-dog" *ngIf="this.dog">
+        <div *ngIf="dog.url.includes('.mp4') || dog.url.includes('.webm'); else normalDog">
+            <video [src]="dog.url" autoplay muted loop></video>
+        </div>
+        <ng-template #normalDog>
+            <img [src]="dog.url" alt="">
+        </ng-template>
+    </div>
+</div>
